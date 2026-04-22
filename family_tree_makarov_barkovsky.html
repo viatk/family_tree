@@ -4,714 +4,1098 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Летопись семьи Макаровых и Барковских</title>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
-    --cream: #f5f0e8;
-    --parchment: #ede5d0;
-    --ink: #2a1f0e;
-    --ink-light: #5c4a2a;
-    --ink-faint: #9c8660;
-    --teal: #2d6b5c;
-    --teal-light: #d4ece5;
-    --teal-mid: #4d9b87;
-    --coral: #8b3a2a;
-    --coral-light: #f0ddd8;
-    --coral-mid: #c06048;
-    --purple: #4a3570;
-    --purple-light: #e0d8f0;
-    --purple-mid: #7a60b0;
-    --amber: #7a5010;
-    --amber-light: #f5e8cc;
-    --amber-mid: #c08030;
-    --gray-line: #c8b89a;
-    --border: #c8b89a;
+    --ink: #1a1208;
+    --sepia: #6b4c2a;
+    --gold: #a07830;
+    --gold-light: #c9a84c;
+    --parchment: #f5edd8;
+    --parchment-dark: #e8d9b8;
+    --parchment-deep: #d4c49a;
+    --red-dark: #7a1f1f;
+    --blue-dark: #1a2e4a;
+    --green-dark: #1a3d2a;
+    --shadow: rgba(60,30,0,0.18);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    background-color: var(--cream);
+    background: var(--parchment);
     background-image:
-      radial-gradient(ellipse at 20% 10%, rgba(180,160,120,0.15) 0%, transparent 60%),
-      radial-gradient(ellipse at 80% 90%, rgba(100,80,50,0.10) 0%, transparent 60%);
-    font-family: 'EB Garamond', Georgia, serif;
+      radial-gradient(ellipse at 20% 10%, rgba(180,140,60,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 90%, rgba(100,60,20,0.07) 0%, transparent 60%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
     color: var(--ink);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 16px;
+    line-height: 1.7;
     min-height: 100vh;
   }
 
-  .page {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 48px 32px 80px;
+  /* ── HEADER ── */
+  .masthead {
+    background: linear-gradient(160deg, #1a1208 0%, #2e1a08 50%, #1a1208 100%);
+    padding: 3rem 2rem 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .masthead::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent, transparent 40px,
+      rgba(160,120,48,0.04) 40px, rgba(160,120,48,0.04) 41px
+    );
+  }
+  .masthead-ornament {
+    color: var(--gold-light);
+    font-size: 1.1rem;
+    letter-spacing: 0.5em;
+    margin-bottom: 0.8rem;
+    opacity: 0.7;
+  }
+  .masthead h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 4vw, 3rem);
+    font-weight: 600;
+    color: var(--parchment);
+    letter-spacing: 0.06em;
+    line-height: 1.2;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+  }
+  .masthead h2 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1rem, 2.5vw, 1.7rem);
+    font-weight: 400;
+    color: var(--gold-light);
+    letter-spacing: 0.1em;
+    margin-top: 0.3rem;
+  }
+  .masthead-sub {
+    margin-top: 1.2rem;
+    color: rgba(245,237,216,0.65);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+  }
+  .masthead-tagline {
+    margin-top: 0.8rem;
+    color: var(--gold-light);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    letter-spacing: 0.08em;
+    opacity: 0.85;
+  }
+  .gold-rule {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
+    margin: 1.2rem auto;
+    max-width: 400px;
   }
 
-  /* HEADER */
-  .header {
-    text-align: center;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 32px;
-    margin-bottom: 40px;
+  /* ── NAV TABS ── */
+  .tab-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+    background: #2e1a08;
+    border-bottom: 2px solid var(--gold);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .tab-btn {
+    background: none;
+    border: none;
+    color: rgba(245,237,216,0.65);
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    padding: 0.75rem 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s;
     position: relative;
   }
-  .header::before {
-    content: '✦';
-    display: block;
-    font-size: 18px;
-    color: var(--amber-mid);
-    margin-bottom: 16px;
-    letter-spacing: 12px;
+  .tab-btn:hover { color: var(--gold-light); }
+  .tab-btn.active {
+    color: var(--gold-light);
   }
-  .header h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 36px;
-    font-weight: 300;
-    letter-spacing: 2px;
-    color: var(--ink);
-    line-height: 1.2;
-    margin-bottom: 8px;
-  }
-  .header h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
-    font-weight: 300;
-    font-style: italic;
-    color: var(--ink-light);
-    margin-bottom: 16px;
-  }
-  .header .subtitle {
-    font-size: 14px;
-    color: var(--ink-faint);
-    letter-spacing: 1px;
-    line-height: 1.8;
-  }
-  .header .ornament {
-    font-size: 13px;
-    color: var(--amber-mid);
-    margin-top: 12px;
-    font-style: italic;
+  .tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; left: 0; right: 0;
+    height: 2px;
+    background: var(--gold-light);
   }
 
-  /* LEGEND */
-  .legend {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    justify-content: center;
-    margin-bottom: 40px;
-    padding: 16px 24px;
-    background: var(--parchment);
-    border: 1px solid var(--border);
-    border-radius: 4px;
+  /* ── PANELS ── */
+  .panel { display: none; padding: 2.5rem 1.5rem; max-width: 1100px; margin: 0 auto; }
+  .panel.active { display: block; }
+
+  /* ── SECTION HEADINGS ── */
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--red-dark);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--parchment-deep);
+    padding-bottom: 0.5rem;
+    margin: 2rem 0 1.2rem;
   }
-  .legend-item {
+  .section-title:first-child { margin-top: 0; }
+
+  /* ── GENERATION HEADER ── */
+  .gen-header {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 13px;
-    color: var(--ink-light);
-  }
-  .legend-dot {
-    width: 14px;
-    height: 14px;
-    border-radius: 3px;
-    flex-shrink: 0;
-  }
-
-  /* GENERATION SECTIONS */
-  .gen-section {
-    margin-bottom: 48px;
+    gap: 1rem;
+    margin: 2.5rem 0 1rem;
   }
   .gen-label {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 11px;
-    letter-spacing: 3px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
     text-transform: uppercase;
-    color: var(--ink-faint);
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    white-space: nowrap;
+    border: 1px solid var(--gold);
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
   }
-  .gen-label::after {
-    content: '';
+  .gen-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--sepia);
+  }
+  .gen-line {
     flex: 1;
     height: 1px;
-    background: var(--border);
-    opacity: 0.5;
+    background: linear-gradient(90deg, var(--parchment-deep), transparent);
   }
 
-  /* PERSON CARDS */
-  .row {
+  /* ── PERSON CARDS ── */
+  .cards-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 8px;
-    align-items: flex-start;
-    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
   }
-  .row.left { justify-content: flex-start; }
-
   .card {
-    border-radius: 6px;
-    padding: 12px 16px;
-    border: 1px solid;
-    min-width: 150px;
-    max-width: 220px;
-    flex: 1;
+    background: linear-gradient(150deg, #fffdf5, var(--parchment-dark));
+    border: 1px solid var(--parchment-deep);
+    border-top: 3px solid var(--gold);
+    border-radius: 2px;
+    padding: 1rem 1.1rem;
+    flex: 1 1 220px;
+    max-width: 320px;
+    box-shadow: 2px 3px 10px var(--shadow);
     position: relative;
+    transition: transform 0.15s, box-shadow 0.15s;
   }
-  .card.teal {
-    background: var(--teal-light);
-    border-color: var(--teal-mid);
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 3px 6px 18px var(--shadow);
   }
-  .card.coral {
-    background: var(--coral-light);
-    border-color: var(--coral-mid);
-  }
-  .card.purple {
-    background: var(--purple-light);
-    border-color: var(--purple-mid);
-    border-width: 1.5px;
-  }
-  .card.amber {
-    background: var(--amber-light);
-    border-color: var(--amber-mid);
-  }
-  .card.gray {
-    background: #f0ebe0;
-    border-color: var(--border);
-  }
-  .card.featured {
-    border-width: 2px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
-  }
+  .card.key { border-top-color: var(--red-dark); }
+  .card.blue { border-top-color: var(--blue-dark); }
+  .card.green { border-top-color: var(--green-dark); }
+  .card.gold-top { border-top-color: var(--gold-light); border-top-width: 4px; }
 
   .card-name {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 16px;
+    font-size: 1.05rem;
     font-weight: 600;
     color: var(--ink);
-    line-height: 1.2;
-    margin-bottom: 4px;
+    line-height: 1.3;
+    margin-bottom: 0.2rem;
   }
   .card-dates {
-    font-size: 12px;
-    color: var(--ink-light);
-    margin-bottom: 4px;
+    font-size: 0.82rem;
+    color: var(--sepia);
     font-style: italic;
+    margin-bottom: 0.5rem;
+  }
+  .card-role {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    color: var(--parchment);
+    background: var(--sepia);
+    padding: 0.1rem 0.45rem;
+    border-radius: 1px;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+  .card-role.red { background: var(--red-dark); }
+  .card-role.blue { background: var(--blue-dark); }
+  .card-role.green { background: var(--green-dark); }
+  .card-role.gold { background: var(--gold); color: var(--ink); }
+  .card-body {
+    font-size: 0.88rem;
+    color: #3a2a14;
+    line-height: 1.6;
   }
   .card-note {
-    font-size: 12px;
-    color: var(--ink-faint);
-    line-height: 1.4;
-  }
-  .card-tag {
-    display: inline-block;
-    font-size: 10px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--ink-faint);
-    background: rgba(255,255,255,0.5);
-    border-radius: 2px;
-    padding: 1px 6px;
-    margin-top: 4px;
-    border: 1px solid rgba(0,0,0,0.1);
-  }
-
-  /* CONNECTOR ARROWS */
-  .connector {
-    text-align: center;
-    color: var(--border);
-    font-size: 20px;
-    line-height: 1;
-    margin: 4px 0;
-    letter-spacing: -2px;
-  }
-  .connector-label {
-    font-size: 11px;
-    color: var(--ink-faint);
     font-style: italic;
-    text-align: center;
-    margin: -4px 0 4px;
+    font-size: 0.83rem;
+    color: var(--sepia);
+    margin-top: 0.4rem;
+    padding-top: 0.4rem;
+    border-top: 1px dashed var(--parchment-deep);
+  }
+  .card-field { margin-bottom: 0.25rem; }
+  .card-field strong {
+    color: var(--sepia);
+    font-weight: 500;
+    font-size: 0.82rem;
   }
 
-  .marriage {
+  /* marriage connector */
+  .couple-row {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 0;
+    margin-bottom: 1rem;
+  }
+  .couple-connector {
     display: flex;
     align-items: center;
-    gap: 0;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .marriage-sign {
-    font-size: 18px;
-    color: var(--ink-faint);
-    padding: 0 8px;
-    font-style: italic;
-  }
-
-  /* BRANCH HEADERS */
-  .branch-header {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 13px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--ink-faint);
-    padding: 8px 16px;
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    display: inline-block;
-    margin-bottom: 16px;
-  }
-
-  /* MERGE NOTE */
-  .merge-note {
-    text-align: center;
-    padding: 16px 24px;
-    background: var(--parchment);
-    border: 1px dashed var(--border);
-    border-radius: 4px;
-    margin: 16px 0;
-    font-style: italic;
-    color: var(--ink-light);
-    font-size: 14px;
-  }
-
-  /* TIMELINE */
-  .timeline {
-    margin-top: 56px;
-    border-top: 1px solid var(--border);
-    padding-top: 40px;
-  }
-  .timeline h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
-    font-weight: 300;
-    color: var(--ink);
-    margin-bottom: 24px;
-    text-align: center;
-  }
-  .timeline-item {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 14px;
-    align-items: flex-start;
-  }
-  .timeline-year {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--amber-mid);
-    min-width: 70px;
-    text-align: right;
-    padding-top: 1px;
-  }
-  .timeline-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--border);
-    margin-top: 6px;
+    padding: 0 0.6rem;
+    padding-top: 2.5rem;
+    color: var(--gold);
+    font-size: 1.4rem;
     flex-shrink: 0;
   }
-  .timeline-text {
-    font-size: 14px;
-    color: var(--ink-light);
-    line-height: 1.5;
-    flex: 1;
-  }
 
-  /* ARCHIVES */
-  .archives {
-    margin-top: 40px;
-    padding: 24px;
-    background: var(--parchment);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-  }
-  .archives h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
-    font-weight: 400;
-    color: var(--ink);
-    margin-bottom: 16px;
-  }
-  .archive-item {
-    font-size: 13px;
-    color: var(--ink-light);
-    line-height: 1.7;
-    margin-bottom: 6px;
-    padding-left: 16px;
-    position: relative;
-  }
-  .archive-item::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    color: var(--amber-mid);
-  }
-
-  /* FOOTER */
-  .footer {
+  /* children arrow */
+  .children-arrow {
     text-align: center;
-    margin-top: 56px;
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
-    font-size: 12px;
-    color: var(--ink-faint);
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin: 0.3rem 0;
+    letter-spacing: 0.2em;
+  }
+
+  /* info box */
+  .info-box {
+    background: linear-gradient(135deg, #fffdf5, #f0e6cc);
+    border: 1px solid var(--parchment-deep);
+    border-left: 4px solid var(--gold);
+    padding: 1rem 1.2rem;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    color: #3a2a14;
     font-style: italic;
-    line-height: 1.8;
+    border-radius: 0 2px 2px 0;
+  }
+  .info-box.red-left { border-left-color: var(--red-dark); }
+  .info-box.blue-left { border-left-color: var(--blue-dark); }
+
+  /* union banner */
+  .union-banner {
+    text-align: center;
+    background: linear-gradient(135deg, #2e1a08, #1a1208);
+    color: var(--gold-light);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    padding: 1.2rem 2rem;
+    margin: 2rem 0;
+    border-radius: 2px;
+    letter-spacing: 0.04em;
+    box-shadow: 0 2px 12px var(--shadow);
   }
 
-  /* BRANCHES SIDE BY SIDE */
-  .branches {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-    margin-bottom: 16px;
+  /* ── TIMELINE ── */
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0.65rem; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--gold), var(--parchment-deep));
   }
-  @media (max-width: 640px) {
-    .branches { grid-template-columns: 1fr; }
-    .header h1 { font-size: 26px; }
-    .card { min-width: 120px; }
+  .tl-item {
+    position: relative;
+    margin-bottom: 1.2rem;
+    padding-left: 1rem;
   }
-
-  .branch { }
-  .branch-teal .branch-header { color: var(--teal); border-color: var(--teal-mid); }
-  .branch-coral .branch-header { color: var(--coral); border-color: var(--coral-mid); }
-
-  /* small card variant */
-  .card.small { min-width: 110px; padding: 8px 12px; }
-  .card.small .card-name { font-size: 14px; }
-
-  .died-marker {
-    color: var(--coral);
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -1.45rem;
+    top: 0.5rem;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 2px solid var(--parchment);
+    box-shadow: 0 0 0 1px var(--gold);
+  }
+  .tl-year {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
     font-weight: 600;
+    color: var(--red-dark);
+    letter-spacing: 0.05em;
+  }
+  .tl-text {
+    font-size: 0.92rem;
+    color: #3a2a14;
+    line-height: 1.5;
+  }
+
+  /* ── ARCHIVE RECS ── */
+  .archive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .archive-card {
+    background: linear-gradient(150deg, #fffdf5, var(--parchment-dark));
+    border: 1px solid var(--parchment-deep);
+    border-top: 3px solid var(--blue-dark);
+    padding: 1rem;
+    box-shadow: 1px 2px 8px var(--shadow);
+  }
+  .archive-card h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.05em;
+    color: var(--blue-dark);
+    margin-bottom: 0.5rem;
+  }
+  .archive-card p { font-size: 0.87rem; color: #3a2a14; line-height: 1.5; }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    background: #1a1208;
+    color: rgba(245,237,216,0.5);
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.82rem;
+    font-style: italic;
+    letter-spacing: 0.05em;
+    margin-top: 3rem;
+  }
+  .site-footer span { color: var(--gold-light); }
+
+  /* ── SPOUSE TABLE ── */
+  .spouse-table { width: 100%; border-collapse: collapse; margin-top: 0.8rem; font-size: 0.88rem; }
+  .spouse-table th {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: var(--sepia);
+    text-align: left;
+    padding: 0.4rem 0.6rem;
+    border-bottom: 1px solid var(--parchment-deep);
+    font-weight: 400;
+  }
+  .spouse-table td {
+    padding: 0.5rem 0.6rem;
+    border-bottom: 1px solid rgba(180,150,90,0.15);
+    vertical-align: top;
+    color: #3a2a14;
+  }
+  .spouse-table tr:last-child td { border-bottom: none; }
+
+  @media(max-width:600px) {
+    .card { max-width: 100%; flex: 1 1 100%; }
+    .couple-connector { display: none; }
+    .masthead h1 { font-size: 1.4rem; }
   }
 </style>
 </head>
 <body>
-<div class="page">
 
-  <!-- HEADER -->
-  <div class="header">
-    <h1>Летопись семьи</h1>
-    <h2>Макаровых и Барковских</h2>
-    <div class="subtitle">
-      Составлено со слов Красовской (урождённой Макаровой) Светланы Александровны<br>
-      Апрель 2026 года · Беркли, Калифорния, США
-    </div>
-    <div class="ornament">✦ Семь поколений — от Тулы и Польши до Кремниевой долины ✦</div>
+<!-- ══════════════════ HEADER ══════════════════ -->
+<header class="masthead">
+  <div class="masthead-ornament">✦ ✦ ✦</div>
+  <h1>ЛЕТОПИСЬ СЕМЬИ</h1>
+  <h2>Макаровых и Барковских</h2>
+  <div class="gold-rule"></div>
+  <div class="masthead-sub">Составлено со слов Красовской (урождённой Макаровой) Светланы Александровны<br>Апрель 2026 · Беркли, Калифорния, США · Версия 2.1</div>
+  <div class="masthead-tagline">✦ Шесть поколений — от Тульской губернии до Кремниевой долины ✦</div>
+</header>
+
+<!-- ══════════════════ NAVIGATION ══════════════════ -->
+<nav class="tab-nav">
+  <button class="tab-btn active" onclick="showTab('makarov')">Ветвь Макаровых</button>
+  <button class="tab-btn" onclick="showTab('barkovsky')">Ветвь Барковских</button>
+  <button class="tab-btn" onclick="showTab('svetlana')">Семья Светланы</button>
+  <button class="tab-btn" onclick="showTab('next')">Следующие поколения</button>
+  <button class="tab-btn" onclick="showTab('spouses')">Супруги и родственники</button>
+  <button class="tab-btn" onclick="showTab('timeline')">Хронология</button>
+  <button class="tab-btn" onclick="showTab('archives')">Архивы</button>
+</nav>
+
+<!-- ══════════════════ МАКАРОВЫ ══════════════════ -->
+<div id="tab-makarov" class="panel active">
+
+  <div class="info-box">
+    Родоначальник ветви — <strong>Макар</strong>, переселенец из Тульской губернии в Беларусь во время войн и восстаний на окраинах Российской Империи и Речи Посполитой (~1863 г.). Осел в местечке <strong>Боровые, Сенненского повета Могилёвской губернии</strong> (ныне Крупский район, Минская область, Беларусь).
   </div>
 
-  <!-- LEGEND -->
-  <div class="legend">
-    <div class="legend-item"><div class="legend-dot" style="background:#4d9b87;"></div>Ветвь Макаровых</div>
-    <div class="legend-item"><div class="legend-dot" style="background:#c06048;"></div>Ветвь Барковских</div>
-    <div class="legend-item"><div class="legend-dot" style="background:#7a60b0;"></div>Семья Светланы</div>
-    <div class="legend-item"><div class="legend-dot" style="background:#c08030;"></div>Следующие поколения</div>
-    <div class="legend-item"><div class="legend-dot" style="background:#c8b89a;"></div>Супруги</div>
+  <div class="gen-header">
+    <span class="gen-label">Поколение I</span>
+    <span class="gen-title">Родоначальник · Тульская губерния</span>
+    <div class="gen-line"></div>
   </div>
-
-  <!-- ═══════════ ВЕТВЬ МАКАРОВЫХ ═══════════ -->
-  <div class="gen-section">
-    <div class="gen-label">Поколение I · Тульская губерния</div>
-    <div class="row">
-      <div class="card teal featured">
-        <div class="card-name">Макар</div>
-        <div class="card-dates">~1790–1800</div>
-        <div class="card-note">Родоначальник ветви Макаровых. Переселенец из Тульской губернии в Беларусь.</div>
-        <span class="card-tag">Тульская губ.</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="gen-section">
-    <div class="gen-label">Поколение II · Дети Макара</div>
-    <div class="row">
-      <div class="card teal">
-        <div class="card-name">Григорий Макарович</div>
-        <div class="card-dates">1818 — 17.04.1887</div>
-      </div>
-      <div class="card teal">
-        <div class="card-name">Георгий Макарович</div>
-        <div class="card-dates">1829 — 12.12.1878</div>
-        <div class="card-note">Предположительно близнец Прокофия</div>
-      </div>
-      <div class="card teal">
-        <div class="card-name">Прокофий Макарович</div>
-        <div class="card-dates">1829 — 05.09.1874</div>
-        <div class="card-note">Предположительно близнец Георгия</div>
-      </div>
+  <div class="cards-row">
+    <div class="card gold-top">
+      <div class="card-name">Макар</div>
+      <div class="card-dates">~1790–1800 г.р.</div>
+      <span class="card-role gold">Родоначальник</span>
+      <div class="card-body">Родоначальник династической ветви МАКАРОВЫХ. Переселенец из Тульской губернии.</div>
+      <div class="card-note">Тульская губерния → Беларусь</div>
     </div>
   </div>
 
-  <div class="gen-section">
-    <div class="gen-label">Поколение III · Прадед</div>
-    <div class="marriage row">
-      <div class="card teal featured">
-        <div class="card-name">Макар Григорьевич Макаров</div>
-        <div class="card-dates">1865 — 1918</div>
-        <div class="card-note">Необыкновенная физическая сила — черта, передавшаяся всем детям и внукам.</div>
-        <span class="card-tag">Прадед</span>
-      </div>
-      <div class="marriage-sign">×</div>
-      <div class="card gray">
-        <div class="card-name">Елизавета Фёдоровна</div>
-        <div class="card-dates">Чёрных / Козлова · ?–1920</div>
-        <div class="card-note">Из д. Ротань, Крупский район. Девичья фамилия точно не установлена.</div>
-        <span class="card-tag">Прабабушка</span>
-      </div>
+  <div class="gen-header">
+    <span class="gen-label">Поколение II</span>
+    <span class="gen-title">Дети Макара</span>
+    <div class="gen-line"></div>
+  </div>
+  <div class="cards-row">
+    <div class="card">
+      <div class="card-name">Григорий Макарович</div>
+      <div class="card-dates">1818 — 17.04.1887</div>
+      <div class="card-body">Старший сын Макара. Вероятно, именно он переселился из Тулы взрослым человеком — в 1863 г. ему было около 45 лет.</div>
     </div>
-    <div style="margin-top:12px; padding:10px 16px; background:var(--parchment); border-left:3px solid var(--teal-mid); border-radius:0 4px 4px 0; font-size:13px; color:var(--ink-light);">
-      Братья Макара Григорьевича: <strong>Пилагей</strong> (сменил фамилию на Зайцев) · <strong>Андрей</strong> (похоронен в д. Боровые; его внуки Дмитрий и Егор погибли 29.06.1941 — на 8-й день войны)
+    <div class="card">
+      <div class="card-name">Георгий Макарович</div>
+      <div class="card-dates">1829 — 12.12.1878</div>
+      <div class="card-note">Предположительно близнец Прокофия</div>
+    </div>
+    <div class="card">
+      <div class="card-name">Прокофий Макарович</div>
+      <div class="card-dates">1829 — 05.09.1874</div>
+      <div class="card-note">Предположительно близнец Георгия</div>
     </div>
   </div>
 
-  <div class="gen-section">
-    <div class="gen-label">Поколение V · Дети Макара Григорьевича</div>
-    <div class="row">
-      <div class="card teal small">
-        <div class="card-name">Макар Макарович</div>
-        <div class="card-dates"><span class="died-marker">†~1917–22</span></div>
-        <div class="card-note">Георгиевские кресты. Погиб в Гражданской войне (красные).</div>
+  <div class="gen-header">
+    <span class="gen-label">Поколение III</span>
+    <span class="gen-title">Прадед и прабабушка</span>
+    <div class="gen-line"></div>
+  </div>
+  <div class="couple-row">
+    <div class="card key" style="flex:1 1 240px; max-width:320px">
+      <div class="card-name">Макар Григорьевич Макаров</div>
+      <div class="card-dates">1865 — 1918</div>
+      <span class="card-role red">Прадед</span>
+      <div class="card-body">
+        <div class="card-field"><strong>Место погребения:</strong> д. Боровые</div>
       </div>
-      <div class="card teal small">
-        <div class="card-name">Иван Макарович</div>
-        <div class="card-dates"><span class="died-marker">†1942, Сталинград</span></div>
-        <div class="card-note">7 детей. Переехал в д. Девлатово, Украина.</div>
-      </div>
-      <div class="card teal featured">
-        <div class="card-name">Павел Макарович</div>
-        <div class="card-dates">02.03.1900 — 17.11.1961</div>
-        <div class="card-note">Бухгалтер в колхозе. 4 класса церковно-приходской школы.</div>
-        <span class="card-tag">Дед</span>
-      </div>
-      <div class="card teal small">
-        <div class="card-name">Евгения Макаровна</div>
-        <div class="card-note">→ муж Мамыко. Переехала в д. Девлатово.</div>
-      </div>
-      <div class="card teal small">
-        <div class="card-name">Мария Макаровна</div>
-        <div class="card-note">→ муж Маласай. Переехала в д. Девлатово.</div>
-      </div>
-      <div class="card teal small">
-        <div class="card-name">Василий Макарович</div>
-        <div class="card-dates"><span class="died-marker">†1942, Сталинград</span></div>
-        <div class="card-note">Богатырь. Ушёл добровольцем. Оба брата с Иваном погибли под Сталинградом.</div>
+      <div class="card-note">Необыкновенная физическая сила — черта, передавшаяся всем детям и внукам.</div>
+    </div>
+    <div class="couple-connector">×</div>
+    <div class="card" style="flex:1 1 240px; max-width:320px">
+      <div class="card-name">Елисавета Фёдоровна</div>
+      <div class="card-dates">? — 1920</div>
+      <span class="card-role">Прабабушка</span>
+      <div class="card-body">
+        <div class="card-field"><strong>Фамилия:</strong> Чёрных или Козлова (точно не установлена)</div>
+        <div class="card-field"><strong>Место рождения:</strong> д. Ротань, Крупский район</div>
+        <div class="card-field"><strong>Место погребения:</strong> д. Боровые, рядом с мужем</div>
       </div>
     </div>
   </div>
 
-  <div class="gen-section">
-    <div class="gen-label">Поколение VI · Дед и бабушка</div>
-    <div class="marriage row">
-      <div class="card teal featured">
-        <div class="card-name">Павел Макарович Макаров</div>
-        <div class="card-dates">02.03.1900 — 17.11.1961</div>
-        <span class="card-tag">Дед</span>
-      </div>
-      <div class="marriage-sign">×</div>
-      <div class="card gray featured">
-        <div class="card-name">Мария Яковлевна Хващевская</div>
-        <div class="card-dates">20.04.1902 — 12.03.1972</div>
-        <div class="card-note">Вышивала, вязала, ткала, пряла, пекла хлеб. Глубоко верующая — водила внучку Светлану в церковь.</div>
-        <span class="card-tag">Бабушка</span>
+  <div class="info-box">
+    <strong>Братья Макара Григорьевича:</strong><br>
+    <strong>Пилагей Григорьевич</strong> — участвовал в войнах Российской Империи; сменил фамилию на <strong>Зайцев</strong>; отличался необыкновенной силой. Сын Максим и внук Иван жили в д. Боровые — все богатырски сильны.<br>
+    <strong>Андрей Григорьевич</strong> — похоронен в д. Боровые. Сын Дмитрий и внук Егор трагически погибли 29.06.1941 (на 8-й день войны). Внук Василий Дмитриевич; его жена Валентина Ивановна была первой учительницей Светланы. Дети Василия: Светлана, Александр, Раиса, Сергей.
+  </div>
+
+  <div class="gen-header">
+    <span class="gen-label">Поколение IV</span>
+    <span class="gen-title">Дети Макара Григорьевича и Елисаветы Фёдоровны</span>
+    <div class="gen-line"></div>
+  </div>
+  <div class="info-box red-left">Шестеро детей. Богатырская сила — семейная черта. Трагические судьбы на фоне войн и революций.</div>
+  <div class="cards-row">
+    <div class="card">
+      <div class="card-name">Макар Макарович</div>
+      <div class="card-dates">†~1917–1922</div>
+      <div class="card-body">
+        <div class="card-field"><strong>Служба:</strong> Первая мировая война</div>
+        <div class="card-field"><strong>Награды:</strong> Георгиевские кресты</div>
+        <div class="card-field"><strong>Гибель:</strong> Гражданская война 1918–22, на стороне большевиков</div>
+        <div class="card-field"><strong>Дочь:</strong> вышла за военного Шкиндер</div>
       </div>
     </div>
-    <div class="connector">↓</div>
-    <div class="row">
-      <div class="card teal small">
-        <div class="card-name">Василий Павлович</div>
-        <div class="card-dates">1929 — <span class="died-marker">†1942</span></div>
-        <div class="card-note">Погиб ~13 лет в нем. оккупации Беларуси</div>
+    <div class="card">
+      <div class="card-name">Иван Макарович</div>
+      <div class="card-dates">†1942, Сталинград</div>
+      <div class="card-body">
+        <div class="card-field"><strong>Дети:</strong> 7 детей</div>
+        <div class="card-field"><strong>Переезд:</strong> 1932–33, д. Девлатово, Днепропетровская обл.</div>
       </div>
-      <div class="card teal small">
-        <div class="card-name">Илья Павлович</div>
-        <div class="card-dates">02.08.1932 — 07.06.1997</div>
-        <div class="card-note">Зам. министра МВД Марийской АССР</div>
-        <span class="card-tag">Дядя</span>
+      <div class="card-note">Необыкновенная физическая сила.</div>
+    </div>
+    <div class="card">
+      <div class="card-name">Евгения Макаровна</div>
+      <div class="card-body">
+        <div class="card-field"><strong>Муж:</strong> Мамыко (д. Игрушка)</div>
+        <div class="card-field"><strong>Переезд:</strong> д. Девлатово, Украина</div>
       </div>
-      <div class="card teal featured">
-        <div class="card-name">Александр Павлович</div>
-        <div class="card-dates">01.08.1927 — 10.05.2006</div>
-        <div class="card-note">БГУ, 1952. Учитель математики → Директор школы в д. Игрушка. Познакомился с Ниной в школе д. Смородинка.</div>
-        <span class="card-tag">Отец Светланы</span>
+    </div>
+    <div class="card key">
+      <div class="card-name">Павел Макарович</div>
+      <div class="card-dates">02.03.1900 — 17.11.1961</div>
+      <span class="card-role red">Дед</span>
+      <div class="card-body">
+        <div class="card-field"><strong>Образование:</strong> 4 класса церк.-прих. школы</div>
+        <div class="card-field"><strong>Работа:</strong> Бухгалтер в колхозе</div>
       </div>
+      <div class="card-note">Участник ВОВ. Ранен при освобождении Польши. Дошёл до Берлина, расписался на Рейхстаге. Награждён 2 орденами и многими медалями.</div>
+    </div>
+    <div class="card">
+      <div class="card-name">Мария Макаровна</div>
+      <div class="card-body">
+        <div class="card-field"><strong>Муж:</strong> Маласай (д. Малые Жаберичи)</div>
+        <div class="card-field"><strong>Переезд:</strong> д. Девлатово, Украина</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-name">Василий Макарович</div>
+      <div class="card-dates">†1942, Сталинград</div>
+      <div class="card-body">
+        <div class="card-field"><strong>Работал:</strong> Москва</div>
+        <div class="card-field"><strong>На фронт:</strong> доброволец</div>
+      </div>
+      <div class="card-note">Богатырского здоровья: никогда не болел, спал в снегу. Сильнейший солдат полка. Два брата — Иван и Василий — оба погибли под Сталинградом.</div>
     </div>
   </div>
 
-  <hr style="border:none; border-top: 1px dashed var(--border); margin: 32px 0;">
-
-  <!-- ═══════════ ВЕТВЬ БАРКОВСКИХ ═══════════ -->
-  <div class="gen-section">
-    <div class="gen-label">Ветвь Барковских · Польша → Витебская область</div>
-    <div style="font-size:13px; color:var(--ink-faint); font-style:italic; margin-bottom:16px; line-height:1.7;">
-      Усадьба Межево упоминается с XVI века. В конце XVIII в. Екатерина II пожаловала эти земли польскому графу Любинскому, который привёз из Польши специалистов — среди них был предок Александр Бодовский. Со временем фамилия Бодовский трансформировалась в Барковский.
+  <div class="gen-header">
+    <span class="gen-label">Поколение V</span>
+    <span class="gen-title">Семья Павла Макаровича · дед и бабушка</span>
+    <div class="gen-line"></div>
+  </div>
+  <div class="couple-row">
+    <div class="card key" style="flex:1 1 240px;max-width:320px">
+      <div class="card-name">Павел Макарович Макаров</div>
+      <div class="card-dates">02.03.1900 — 17.11.1961</div>
+      <span class="card-role red">Дед</span>
     </div>
-    <div class="row">
-      <div class="card coral featured">
-        <div class="card-name">Александр Бодовский (Барковский)</div>
-        <div class="card-dates">Конец XVIII века</div>
-        <div class="card-note">Польский специалист. Прибыл с графом Любинским. Женился на белорусской женщине.</div>
-        <span class="card-tag">Прапрадед</span>
+    <div class="couple-connector">×</div>
+    <div class="card key" style="flex:1 1 240px;max-width:320px">
+      <div class="card-name">Мария Яковлевна Хващевская</div>
+      <div class="card-dates">20.04.1902 — 12.03.1972</div>
+      <span class="card-role red">Бабушка</span>
+      <div class="card-body">
+        <div class="card-field"><strong>Место рождения:</strong> д. Дубешня, Крупский район</div>
+        <div class="card-field"><strong>Образование:</strong> 2 класса церк.-прих. школы</div>
       </div>
-    </div>
-    <div class="connector">↓</div>
-    <div class="marriage row">
-      <div class="card coral featured">
-        <div class="card-name">Григорий Александрович Барковский</div>
-        <div class="card-dates">1895, д. Межево — <span class="died-marker">†12.05.1943 на фронте</span></div>
-        <div class="card-note">Доброволец. В гвардейском полку — мастер-кузнец, подковывал лошадей.</div>
-        <span class="card-tag">Дед по матери</span>
-      </div>
-      <div class="marriage-sign">×</div>
-      <div class="card gray">
-        <div class="card-name">Анна Лукинична</div>
-        <div class="card-dates">1896, д. Пещанка</div>
-        <div class="card-note">3 класса церк.-прих. школы. Несмотря на это, все 4 детей получили высшее образование.</div>
-        <span class="card-tag">Бабушка по матери</span>
-      </div>
-    </div>
-    <div class="connector">↓</div>
-    <div class="row">
-      <div class="card coral small">
-        <div class="card-name">Вера Григорьевна</div>
-        <div class="card-dates">1918 — 1977</div>
-        <div class="card-note">Учительница, пос. Осинторф</div>
-      </div>
-      <div class="card coral small">
-        <div class="card-name">Василий Григорьевич</div>
-        <div class="card-dates">06.08.1920 — 01.06.1999</div>
-        <div class="card-note">Воевал, попал в плен, бежал. Учитель математики, Бердск.</div>
-      </div>
-      <div class="card coral featured">
-        <div class="card-name">Нина Григорьевна</div>
-        <div class="card-dates">07.10.1928 — 03.04.1997</div>
-        <div class="card-note">Витебский учит. институт. Учительница русского языка. Во время войны дом сожгли войска СС — семья жила в земляном бункере.</div>
-        <span class="card-tag">Мать Светланы</span>
-      </div>
-      <div class="card coral small">
-        <div class="card-name">Михаил Григорьевич</div>
-        <div class="card-dates">13.01.1932</div>
-        <div class="card-note">Подполковник, зенитно-ракетные войска</div>
-      </div>
+      <div class="card-note">Вышивала, вязала, ткала, пряла, пекла хлеб. Все скатерти и покрывала — сотканы своими руками. Глубоко верующая — водила внучку Светлану в церковь.</div>
     </div>
   </div>
 
-  <!-- MERGE -->
-  <div class="merge-note">
-    ✦ Две ветви соединяются ✦<br>
-    Александр Павлович Макаров и Нина Григорьевна Барковская<br>
-    познакомились в школе деревни Смородинка, Крупский район, ~1952 г.,<br>
-    куда оба были направлены работать после окончания высших учебных заведений.
+  <div class="gen-header">
+    <span class="gen-label">Поколение VI</span>
+    <span class="gen-title">Дети Павла Макаровича и Марии Яковлевны</span>
+    <div class="gen-line"></div>
   </div>
-
-  <!-- ═══════════ СВЕТЛАНА И ЕЁ БРАТЬЯ ═══════════ -->
-  <div class="gen-section">
-    <div class="gen-label">Поколение VII · Дети Александра и Нины</div>
-    <div class="row">
-      <div class="card teal small">
-        <div class="card-name">Николай Александрович</div>
-        <div class="card-dates">р. 05.01.1955</div>
-      </div>
-      <div class="card purple featured" style="border-width:2px; min-width:200px;">
-        <div class="card-name">Светлана Александровна</div>
-        <div class="card-dates">р. 12.01.1952</div>
-        <div class="card-note">15 лет гид «Интуриста». Немецкоязычные туристы по всему СССР. Глубокий знаток истории Беларуси.</div>
-        <span class="card-tag">Красовская (урожд. Макарова)</span>
-      </div>
-      <div class="card teal small">
-        <div class="card-name">Сергей Александрович</div>
-        <div class="card-dates">р. 24.06.1964</div>
-        <div class="card-note">Дочь Ирина, р. 11.10.1987</div>
-      </div>
-      <div class="card teal small">
-        <div class="card-name">Александр Александрович</div>
-        <div class="card-dates">р. 08.05.1966</div>
-        <div class="card-note">Сыновья: Вадим (1990), Валерий (2003)</div>
+  <div class="cards-row">
+    <div class="card">
+      <div class="card-name">Василий Павлович</div>
+      <div class="card-dates">1929 — †1942</div>
+      <div class="card-body">Погиб ~13 лет во время немецкой оккупации Беларуси.</div>
+    </div>
+    <div class="card">
+      <div class="card-name">Илья Павлович</div>
+      <div class="card-dates">02.08.1932 — 07.06.1997</div>
+      <span class="card-role">Дядя</span>
+      <div class="card-body">
+        <div class="card-field"><strong>Образование:</strong> Минский лесотехнический институт</div>
+        <div class="card-field"><strong>Должность:</strong> Зам. министра МВД Марийской АССР СССР</div>
+        <div class="card-field"><strong>Жена:</strong> Мария Николаевна (19.08.1932 — 03.10.2015)</div>
+        <div class="card-field"><strong>Дочь:</strong> Мельник (Макарова) Ольга Ильинична, р. 20.05.1958, врач</div>
+        <div class="card-field" style="padding-left:0.8rem;font-size:0.82rem">Муж: Мельник Владимир Фёдорович, р. 18.02.1953<br>Дети: Илья (21.12.1990), Николай (15.10.1992)</div>
       </div>
     </div>
-
-    <div style="margin:16px 0 8px; font-size:13px; color:var(--ink-faint); font-style:italic; text-align:center;">
-      Муж Светланы: Валерий Степанович Красовский · военный лётчик · <span class="died-marker">†07.07.1976</span> при выполнении задания в ГДР (ГСВГ)
+    <div class="card key">
+      <div class="card-name">Александр Павлович</div>
+      <div class="card-dates">01.08.1927 — 10.05.2006</div>
+      <span class="card-role red">Отец Светланы</span>
+      <div class="card-body">
+        <div class="card-field"><strong>Место рождения:</strong> д. Боровые, Крупский район</div>
+        <div class="card-field"><strong>Образование:</strong> БГУ, окончил в 1949 г.</div>
+        <div class="card-field"><strong>Профессия:</strong> Учитель математики → Директор школы в д. Игрушка</div>
+      </div>
+      <div class="card-note">Познакомился с Ниной Григорьевной в школе д. Смородинка, куда оба были направлены работать.</div>
     </div>
   </div>
-
-  <!-- ═══════════ ДЕТИ СВЕТЛАНЫ ═══════════ -->
-  <div class="gen-section">
-    <div class="gen-label">Поколение VIII · Дети Светланы</div>
-    <div class="row">
-      <div class="card purple featured">
-        <div class="card-name">Вячеслав Валерьевич Красовский</div>
-        <div class="card-dates">р. 21.01.1976, Дрезден</div>
-        <div class="card-note">МГУ. Microsoft — 17 лет, затем Facebook (Meta). Лицензированный пилот. Самостоятельно построил вертолёт. Любовь к авиации — от отца.</div>
-        <span class="card-tag">Беркли, Калифорния</span>
-      </div>
-      <div class="card purple">
-        <div class="card-name">Михаил Михайлович Сильванович</div>
-        <div class="card-dates">р. 18.12.1986, Минск</div>
-        <div class="card-note">БГУ. Программист, Touchsoft, Минск.</div>
-        <div style="font-size:12px; color:var(--ink-faint); margin-top:6px;">× Екатерина Чачик (р. 1991) · МГЛУ · EPAM</div>
-      </div>
-    </div>
-    <div style="font-size:13px; color:var(--ink-faint); font-style:italic; margin:8px 0 0; text-align:center;">
-      Жена Вячеслава: Кристина Федченя (р. 06.03.1996) · МГУ, физфак · PhD биотехнологии · UC Berkeley
-    </div>
-  </div>
-
-  <!-- ═══════════ ВНУКИ ═══════════ -->
-  <div class="gen-section">
-    <div class="gen-label">Поколение IX · Внуки Светланы</div>
-    <div class="row">
-      <div class="card amber featured">
-        <div class="card-name">Александр Красовский</div>
-        <div class="card-dates">р. январь 1999</div>
-        <div class="card-note">Вашингтонский университет. Работает в компании <strong>Anthropic</strong> — создателе ИИ Claude.</div>
-        <span class="card-tag">✦ Беркли, 2026</span>
-      </div>
-      <div class="card amber">
-        <div class="card-name">Виктор Красовский</div>
-        <div class="card-dates">р. 28.03.2005</div>
-        <div class="card-note">Студент Вашингтонского университета.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- TIMELINE -->
-  <div class="timeline">
-    <h3>Хронология семьи</h3>
-    <div class="timeline-item"><div class="timeline-year">~1790</div><div class="timeline-dot"></div><div class="timeline-text">Рождение Макара — родоначальника ветви Макаровых</div></div>
-    <div class="timeline-item"><div class="timeline-year">~1863</div><div class="timeline-dot"></div><div class="timeline-text">Переселение Макаровых из Тульской губернии в Беларусь (восстание Калиновского)</div></div>
-    <div class="timeline-item"><div class="timeline-year">1895–96</div><div class="timeline-dot"></div><div class="timeline-text">Рождение Григория и Анны Барковских — дедушки и бабушки по материнской линии</div></div>
-    <div class="timeline-item"><div class="timeline-year">1900–02</div><div class="timeline-dot"></div><div class="timeline-text">Рождение Павла Макарова и Марии Хващевской — дедушки и бабушки по отцовской линии</div></div>
-    <div class="timeline-item"><div class="timeline-year">1914–18</div><div class="timeline-dot"></div><div class="timeline-text">Первая мировая война: Макар Макарович награждён Георгиевскими крестами</div></div>
-    <div class="timeline-item"><div class="timeline-year">1917–22</div><div class="timeline-dot"></div><div class="timeline-text">Революция и Гражданская война: гибель Макара Макаровича на стороне красных</div></div>
-    <div class="timeline-item"><div class="timeline-year">1941–45</div><div class="timeline-dot"></div><div class="timeline-text">Великая Отечественная война: Иван и Василий Макаровы †под Сталинградом (1942); Григорий Барковский †12.05.1943; Василий Павлович Макаров †1942 (13 лет, оккупация)</div></div>
-    <div class="timeline-item"><div class="timeline-year">1952</div><div class="timeline-dot"></div><div class="timeline-text">Александр Макаров и Нина Барковская встречаются в д. Смородинка — две ветви соединяются. Рождение Светланы (12 января)</div></div>
-    <div class="timeline-item"><div class="timeline-year">1976</div><div class="timeline-dot"></div><div class="timeline-text">Рождение Вячеслава Красовского в Дрездене (21 января). Гибель отца — лётчика Валерия Красовского (7 июля, ГДР)</div></div>
-    <div class="timeline-item"><div class="timeline-year">1999</div><div class="timeline-dot"></div><div class="timeline-text">Рождение Александра Красовского — будущего сотрудника Anthropic</div></div>
-    <div class="timeline-item"><div class="timeline-year">2026</div><div class="timeline-dot"></div><div class="timeline-text">Александр работает в Anthropic (создатель ИИ Claude). Виктор — студент Вашингтонского университета. Летопись составлена в Беркли, Калифорния</div></div>
-  </div>
-
-  <!-- ARCHIVES -->
-  <div class="archives">
-    <h3>Рекомендации для архивных поисков</h3>
-    <div class="archive-item"><strong>Польские архивы (AGAD, Варшава)</strong> — документы о польских помещиках эпохи Екатерины II. Искать: граф Любинский, деревня Межево, Александр Бодовский</div>
-    <div class="archive-item"><strong>Национальный исторический архив Беларуси (Минск)</strong> — метрические книги XIX–XX вв. Деревни: Боровые, Дубешня, Ротань, Межево</div>
-    <div class="archive-item"><strong>Крупский районный архив</strong> — деревни Боровые, Ротань, Дубешня, Смородинка, Игрушка</div>
-    <div class="archive-item"><strong>РГВА (Москва)</strong> — Макар Макарович Макаров, кавалер Георгиевских крестов, Гражданская война</div>
-    <div class="archive-item"><strong>«Память народа» (pamyat-naroda.ru)</strong> — Иван и Василий Макаровы (†1942, Сталинград); Григорий Барковский (†12.05.1943)</div>
-    <div class="archive-item"><strong>Польская карта (Karta Polaka)</strong> — возможна для потомков при наличии документов польского происхождения (ветвь Бодовских)</div>
-  </div>
-
-  <!-- FOOTER -->
-  <div class="footer">
-    Составлено с помощью Claude (Anthropic) · Апрель 2026 · Беркли, Калифорния<br>
-    Со слов Красовской (урождённой Макаровой) Светланы Александровны<br>
-    <span style="letter-spacing:6px; color:var(--amber-mid);">✦ ✦ ✦</span>
-  </div>
-
 </div>
+
+<!-- ══════════════════ БАРКОВСКИЕ ══════════════════ -->
+<div id="tab-barkovsky" class="panel">
+
+  <div class="info-box">
+    Усадьба <strong>Межево</strong> упоминается в летописях с XVI века, основана оршанскими боярами <strong>Сапегами</strong>. За свою историю имела нескольких владельцев, в том числе земли принадлежали князю Григорию <strong>Потемкину</strong>. В конце XVIII века Екатерина II пожаловала эти поместья польскому графу <strong>Лубинскому</strong>. Граф привёз из Польши специалистов — среди них был предок <strong>Александр Бодовский</strong>. Со временем фамилия Бодовский трансформировалась в Барковский.
+    <br><br>Ныне: <strong>Оршанский округ Витебской области, Республика Беларусь</strong>.
+  </div>
+
+  <div class="gen-header">
+    <span class="gen-label">Прапрадед</span>
+    <span class="gen-title">Из Речи Посполитой · конец XVIII века</span>
+    <div class="gen-line"></div>
+  </div>
+  <div class="cards-row">
+    <div class="card gold-top">
+      <div class="card-name">Александр Бодовский (Барковский)</div>
+      <div class="card-dates">Конец XVIII века</div>
+      <span class="card-role gold">Родоначальник</span>
+      <div class="card-body">Польский специалист. Прибыл с графом Лубинским. Женился на белорусской женщине.</div>
+      <div class="card-note">Речь Посполитая → имение Межево</div>
+    </div>
+  </div>
+
+  <div class="gen-header">
+    <span class="gen-label">Дед и бабушка</span>
+    <span class="gen-title">По материнской линии</span>
+    <div class="gen-line"></div>
+  </div>
+  <div class="couple-row">
+    <div class="card key" style="flex:1 1 240px;max-width:340px">
+      <div class="card-name">Григорий Александрович Барковский</div>
+      <div class="card-dates">1895, д. Межево — †12.05.1943</div>
+      <span class="card-role red">Дед по матери</span>
+      <div class="card-body">
+        <div class="card-field"><strong>Образование:</strong> Церковно-приходская школа</div>
+      </div>
+      <div class="card-note">После начала ВОВ ушёл добровольцем. В гвардейском полку — мастер-кузнец, подковывал лошадей. Погиб весной 1943.</div>
+    </div>
+    <div class="couple-connector">×</div>
+    <div class="card" style="flex:1 1 240px;max-width:320px">
+      <div class="card-name">Анна Лукинична Барковская</div>
+      <div class="card-dates">1896, д. Песчанка, Богушевский повет, Витебская губ.</div>
+      <span class="card-role">Бабушка по матери</span>
+      <div class="card-body">
+        <div class="card-field"><strong>Образование:</strong> 3 класса церк.-прих. школы</div>
+      </div>
+      <div class="card-note">Несмотря на минимальное образование, придавала ему огромное значение. Все четверо детей получили высшее образование после войны.</div>
+    </div>
+  </div>
+
+  <div class="gen-header">
+    <span class="gen-label">Дети</span>
+    <span class="gen-title">Дети Григория Александровича и Анны Лукиничны</span>
+    <div class="gen-line"></div>
+  </div>
+  <div class="cards-row">
+    <div class="card">
+      <div class="card-name">Вера Григорьевна</div>
+      <div class="card-dates">1918 — 1977</div>
+      <div class="card-body">
+        <div class="card-field"><strong>Профессия:</strong> Учительница</div>
+        <div class="card-field"><strong>Место работы:</strong> пос. Осинторф, Дубровенский район, Витебская область</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-name">Василий Григорьевич</div>
+      <div class="card-dates">06.08.1920 — 01.06.1999, Железноводск</div>
+      <div class="card-body">
+        <div class="card-field"><strong>На фронте:</strong> Воевал с первого дня войны; попал в плен; бежал; дважды ранен</div>
+        <div class="card-field"><strong>Профессия:</strong> Учитель математики, Бердск, Новосибирская обл.</div>
+        <div class="card-field"><strong>Жена:</strong> Чернявская Надежда Харитоновна (20.09.1920 — 12.10.2012)</div>
+        <div class="card-field" style="padding-left:0.8rem;font-size:0.82rem">Д. Запрудье, Витебская губ. Минский университет, преподаватель географии, завуч. Медаль «Ветеран труда». Похоронена в Витебске.</div>
+      </div>
+    </div>
+    <div class="card key">
+      <div class="card-name">Нина Григорьевна</div>
+      <div class="card-dates">07.10.1928, д. Межево — 03.04.1997</div>
+      <span class="card-role red">Мать Светланы</span>
+      <div class="card-body">
+        <div class="card-field"><strong>Образование:</strong> Оршанский учительский институт</div>
+        <div class="card-field"><strong>Профессия:</strong> Учительница русского языка</div>
+      </div>
+      <div class="card-note">Во время войны дом семьи сожгли войска СС. Семья жила в земляном бункере в мороз и зиму.</div>
+    </div>
+    <div class="card">
+      <div class="card-name">Михаил Григорьевич</div>
+      <div class="card-dates">р. 13.01.1932, д. Межево</div>
+      <div class="card-body">
+        <div class="card-field"><strong>Звание:</strong> Подполковник, зенитно-ракетные войска</div>
+        <div class="card-field"><strong>Жена:</strong> Шмуратко Зинаида Семёновна (08.01.1929 — 24.10.2016), д. Яново, Витебская обл.</div>
+        <div class="card-field"><strong>Дети:</strong> Игорь (26.06.1956 — 25.01.2001) и Вячеслав (р. 20.05.1964, живёт под Москвой)</div>
+        <div class="card-field" style="padding-left:0.8rem;font-size:0.82rem">Дети Игоря: Екатерина (01.04.1984), Андрей (20.01.2000)<br>Сын Вячеслава: Егор</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="union-banner">
+    ✦ Две ветви соединяются ✦<br>
+    <span style="font-size:0.95rem">Александр Павлович Макаров и Нина Григорьевна Барковская познакомились в школе деревни Смородинка, Крупский район, ~1949–1952 г., куда оба были направлены работать.</span>
+  </div>
+</div>
+
+<!-- ══════════════════ СЕМЬЯ СВЕТЛАНЫ ══════════════════ -->
+<div id="tab-svetlana" class="panel">
+
+  <div class="card key" style="max-width:100%">
+    <div class="card-name" style="font-size:1.2rem">Красовская Светлана Александровна</div>
+    <div class="card-dates">урождённая Макарова · р. 22 декабря 1951</div>
+    <span class="card-role red">Главный хранитель памяти</span>
+    <div class="card-body" style="margin-top:0.6rem">
+      <div class="card-field"><strong>Образование:</strong> Минский государственный институт иностранных языков, немецкий и английский языки, окончила с отличием в 1974 г.</div>
+      <div class="card-field"><strong>Профессия:</strong> 15 лет гидом в «Интуристе» — экскурсии для немецкоязычных туристов по всему СССР (Беларусь, Сибирь, Дальний Восток, Средняя Азия). С 1991 г. — преподаватель МГИИЯ, кафедра лексикологии, страноведение Германии, практика немецкого языка.</div>
+    </div>
+    <div class="card-note">Сопровождала туристов из ГДР в Хатынь. Глубокий знаток истории Минска и Беларуси. Первая квартира в Минске — на улице Калиновского.</div>
+  </div>
+
+  <div class="section-title">Муж: Красовский Валерий Степанович</div>
+  <div class="card blue" style="max-width:520px">
+    <div class="card-name">Красовский Валерий Степанович</div>
+    <span class="card-role blue">Муж</span>
+    <div class="card-body">
+      <div class="card-field"><strong>Образование:</strong> Сызранское высшее военное авиационное училище лётчиков</div>
+      <div class="card-field"><strong>Профессия:</strong> Военный вертолётчик</div>
+      <div class="card-field"><strong>Звание:</strong> Старший лейтенант</div>
+      <div class="card-field"><strong>Гибель:</strong> 07.07.1976 — при выполнении задания в ГДР (ГСВГ)</div>
+      <div class="card-field"><strong>Место погребения:</strong> д. Ляды, Крупский район, Минская область</div>
+    </div>
+    <div class="card-note">Погиб в том же году, когда родился сын Вячеслав.</div>
+  </div>
+
+  <div class="section-title">Братья Светланы</div>
+  <div class="cards-row">
+    <div class="card">
+      <div class="card-name">Николай Александрович</div>
+      <div class="card-dates">р. 05.01.1955</div>
+      <div class="card-body">
+        <div class="card-field"><strong>Учёба:</strong> Игрушская средняя школа</div>
+        <div class="card-field"><strong>Образование:</strong> Рязанское ВВАУИ</div>
+        <div class="card-field"><strong>Работа:</strong> Лесхоз Крупского района</div>
+        <div class="card-field"><strong>Звание:</strong> Подполковник</div>
+      </div>
+      <div class="card-note">Окончил ВВАУИ с золотой медалью.</div>
+    </div>
+    <div class="card">
+      <div class="card-name">Сергей Александрович</div>
+      <div class="card-dates">р. 24.06.1964</div>
+      <div class="card-body">
+        <div class="card-field"><strong>Учёба:</strong> Крупская средняя школа №2</div>
+        <div class="card-field"><strong>Образование:</strong> Рязанское ВВАУИ</div>
+        <div class="card-field"><strong>Звание:</strong> Подполковник</div>
+        <div class="card-field"><strong>Жена:</strong> Пирожкова Марина Витальевна (р. 17.08.1962)</div>
+        <div class="card-field" style="padding-left:0.8rem;font-size:0.82rem">Рязанский мед. университет, фармацевт, 1984</div>
+        <div class="card-field"><strong>Дочь:</strong> Макарова Ирина Сергеевна (р. 11.10.1987)</div>
+        <div class="card-field" style="padding-left:0.8rem;font-size:0.82rem">СПбГУ, историч. факультет, 2010</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-name">Александр Александрович</div>
+      <div class="card-dates">р. 08.05.1966</div>
+      <div class="card-body">
+        <div class="card-field"><strong>Учёба:</strong> Игрушская средняя школа (серебряная медаль)</div>
+        <div class="card-field"><strong>Образование:</strong> ПТУ №31, Минск · Рязанское ВВАУИ · Военная академия Тыла и Транспорта (все с отличием)</div>
+        <div class="card-field"><strong>Звание:</strong> Подполковник</div>
+        <div class="card-field"><strong>Жена:</strong> Махлаева Елена Васильевна (р. 13.03.1967)</div>
+        <div class="card-field" style="padding-left:0.8rem;font-size:0.82rem">МГПИ, дефектология, 1990</div>
+        <div class="card-field"><strong>Сыновья:</strong> Вадим (р. 01.12.1990) · Валерий (р. 05.12.2003)</div>
+        <div class="card-field" style="padding-left:0.8rem;font-size:0.82rem">Вадим: СПбПУ, техн. кибернетика, 2013<br>Валерий: СПбПУ, техн. экспертиза, 2026</div>
+      </div>
+      <div class="card-note">Стоял у истоков сбора информации для этой Летописи.</div>
+    </div>
+  </div>
+
+  <div class="section-title">Второй сын Светланы</div>
+  <div class="card green" style="max-width:420px">
+    <div class="card-name">Сильванович Михаил Михайлович</div>
+    <div class="card-dates">р. 18.12.1986, Минск</div>
+    <span class="card-role green">Сын</span>
+    <div class="card-body">
+      <div class="card-field"><strong>Образование:</strong> БГУ, Минск</div>
+      <div class="card-field"><strong>Работа:</strong> Программист, Touchsoft, Минск</div>
+      <div class="card-field"><strong>Жена:</strong> Чачик Екатерина (р. 28.05.1991) · МГЛУ · EPAM</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ СЛЕДУЮЩИЕ ПОКОЛЕНИЯ ══════════════════ -->
+<div id="tab-next" class="panel">
+
+  <div class="gen-header">
+    <span class="gen-label">Поколение VIII</span>
+    <span class="gen-title">Дети Светланы · Вячеслав Красовский</span>
+    <div class="gen-line"></div>
+  </div>
+
+  <div class="couple-row">
+    <div class="card key" style="flex:1 1 280px;max-width:380px">
+      <div class="card-name">Красовский Вячеслав Валерьевич</div>
+      <div class="card-dates">р. 21.01.1976, Дрезден, Германия</div>
+      <span class="card-role red">Сын Светланы</span>
+      <div class="card-body">
+        <div class="card-field"><strong>Образование:</strong> МГУ, Москва</div>
+        <div class="card-field"><strong>Карьера:</strong> Microsoft — 17 лет; Facebook (Meta)</div>
+        <div class="card-field"><strong>Увлечения:</strong> Лицензированный пилот; самостоятельно построил вертолёт</div>
+      </div>
+      <div class="card-note">Любовь к авиации — от отца, военного вертолётчика Валерия Степановича.</div>
+    </div>
+    <div class="couple-connector">×</div>
+    <div class="card" style="flex:1 1 260px;max-width:340px">
+      <div class="card-name">Кристина Федченя</div>
+      <div class="card-dates">р. 06.03.1996</div>
+      <span class="card-role">Жена</span>
+      <div class="card-body">
+        <div class="card-field"><strong>Образование:</strong> МГУ, физический факультет</div>
+        <div class="card-field"><strong>Аспирантура:</strong> США, PhD биотехнологий</div>
+        <div class="card-field"><strong>Работала:</strong> Калифорнийский университет, Беркли</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="children-arrow">↓</div>
+
+  <div class="gen-header">
+    <span class="gen-label">Поколение IX</span>
+    <span class="gen-title">Внуки Светланы</span>
+    <div class="gen-line"></div>
+  </div>
+  <div class="cards-row">
+    <div class="card gold-top">
+      <div class="card-name">Красовский Александр</div>
+      <div class="card-dates">р. 01.06.1999, Сиэтл, США</div>
+      <span class="card-role gold">Внук · Anthropic</span>
+      <div class="card-body">
+        <div class="card-field"><strong>Образование:</strong> Вашингтонский университет</div>
+        <div class="card-field"><strong>Работа:</strong> Компания <strong>Anthropic</strong> — создатель ИИ Claude</div>
+      </div>
+      <div class="card-note">✦ Именно Claude помог составить эту Летопись · Беркли, 2026</div>
+    </div>
+    <div class="card">
+      <div class="card-name">Красовский Виктор</div>
+      <div class="card-dates">р. 28.03.2005, Сиэтл, США</div>
+      <span class="card-role">Внук</span>
+      <div class="card-body">
+        <div class="card-field"><strong>Образование:</strong> Студент Вашингтонского университета</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">Семья Николая Александровича · ветвь Даровских</div>
+  <div class="couple-row">
+    <div class="card" style="flex:1 1 260px;max-width:340px">
+      <div class="card-name">Даровских (Макарова) Анастасия Николаевна</div>
+      <div class="card-dates">р. 26.11.1992</div>
+      <span class="card-role">Дочь Николая</span>
+      <div class="card-body">
+        <div class="card-field"><strong>Образование:</strong> СПбГУПТД, кафедра туристического бизнеса, 2015</div>
+      </div>
+    </div>
+    <div class="couple-connector">×</div>
+    <div class="card" style="flex:1 1 240px;max-width:320px">
+      <div class="card-name">Даровских Александр Дмитриевич</div>
+      <div class="card-dates">р. 06.08.1993</div>
+      <span class="card-role">Муж</span>
+      <div class="card-body">
+        <div class="card-field"><strong>Образование:</strong> ЛСИТ, Санкт-Петербург, повар-кондитер, 2012</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="children-arrow">↓</div>
+
+  <div class="cards-row">
+    <div class="card gold-top">
+      <div class="card-name">Даровских Николь Александровна</div>
+      <div class="card-dates">р. 11.01.2025</div>
+      <span class="card-role gold">Правнучка Светланы 🎀</span>
+      <div class="card-note">Новое поколение Летописи.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ СУПРУГИ ══════════════════ -->
+<div id="tab-spouses" class="panel">
+  <div class="info-box">Здесь собраны сведения о супругах и родственниках, вошедших в семью через браки.</div>
+
+  <div class="section-title">Вторая жена Николая Александровича Макарова</div>
+  <div class="card" style="max-width:480px">
+    <div class="card-name">Король Августина Андреевна</div>
+    <div class="card-dates">урождённая Ильина · р. 13.08.1957</div>
+    <div class="card-body">
+      <div class="card-field"><strong>Образование:</strong> Чебоксарский экономико-технологический техникум, специальность технолог, окончила в 1978 г.</div>
+    </div>
+  </div>
+
+  <div class="section-title">Жена Валерия Красовского (через Вячеслава)</div>
+  <div class="card" style="max-width:480px">
+    <div class="card-name">Кристина Федченя</div>
+    <div class="card-dates">р. 06.03.1996</div>
+    <div class="card-body">
+      <div class="card-field"><strong>Образование:</strong> МГУ, физический факультет</div>
+      <div class="card-field"><strong>PhD:</strong> Биотехнологии (США)</div>
+      <div class="card-field"><strong>Работала:</strong> UC Berkeley</div>
+    </div>
+  </div>
+
+  <div class="section-title">Супруги братьев Светланы</div>
+  <table class="spouse-table">
+    <thead>
+      <tr>
+        <th>Имя</th>
+        <th>Дата рождения</th>
+        <th>Образование / Профессия</th>
+        <th>Супруг</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Пирожкова Марина Витальевна</td>
+        <td>17.08.1962</td>
+        <td>Рязанский мед. университет, фармацевт, 1984</td>
+        <td>Сергей Александрович</td>
+      </tr>
+      <tr>
+        <td>Махлаева Елена Васильевна</td>
+        <td>13.03.1967</td>
+        <td>МГПИ, дефектология, 1990</td>
+        <td>Александр Александрович</td>
+      </tr>
+      <tr>
+        <td>Король (Ильина) Августина Андреевна</td>
+        <td>13.08.1957</td>
+        <td>Чебоксарский экон.-технол. техникум, технолог, 1978</td>
+        <td>Николай Александрович (вторая жена)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="section-title">Жена Михаила Григорьевича Барковского</div>
+  <div class="card" style="max-width:480px">
+    <div class="card-name">Шмуратко Зинаида Семёновна</div>
+    <div class="card-dates">08.01.1929, д. Яново, Витебская обл. — 24.10.2016</div>
+  </div>
+
+  <div class="section-title">Жена Василия Григорьевича Барковского</div>
+  <div class="card" style="max-width:480px">
+    <div class="card-name">Чернявская Надежда Харитоновна</div>
+    <div class="card-dates">20.09.1920, д. Запрудье, Витебская губ. — 12.10.2012, Витебск</div>
+    <div class="card-body">
+      <div class="card-field"><strong>Образование:</strong> Минский университет, преподаватель географии</div>
+      <div class="card-field"><strong>Должность:</strong> Завуч школы</div>
+      <div class="card-field"><strong>Награда:</strong> Медаль «Ветеран труда» за 50-летний труд</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ ХРОНОЛОГИЯ ══════════════════ -->
+<div id="tab-timeline" class="panel">
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-year">~1790–1800</div><div class="tl-text">Рождение Макара — родоначальника ветви Макаровых, переселенца из Тульской губернии</div></div>
+    <div class="tl-item"><div class="tl-year">1818</div><div class="tl-text">Рождение Григория Макаровича — старшего сына Макара (прапрадед)</div></div>
+    <div class="tl-item"><div class="tl-year">1829</div><div class="tl-text">Рождение Георгия и Прокофия Макаровичей (предположительно близнецы)</div></div>
+    <div class="tl-item"><div class="tl-year">~1863</div><div class="tl-text">Переселение Макаровых из Тульской губернии в Беларусь (д. Боровые, Сенненский повет Могилёвской губернии)</div></div>
+    <div class="tl-item"><div class="tl-year">1865</div><div class="tl-text">Рождение Макара Григорьевича Макарова (прадед)</div></div>
+    <div class="tl-item"><div class="tl-year">1887</div><div class="tl-text">Смерть Григория Макаровича</div></div>
+    <div class="tl-item"><div class="tl-year">1895</div><div class="tl-text">Рождение Григория Александровича Барковского (дед по материнской линии), д. Межево</div></div>
+    <div class="tl-item"><div class="tl-year">1896</div><div class="tl-text">Рождение Анны Лукиничны Барковской (бабушка по материнской линии), д. Песчанка</div></div>
+    <div class="tl-item"><div class="tl-year">1900</div><div class="tl-text">Рождение Павла Макаровича Макарова (дед по отцовской линии)</div></div>
+    <div class="tl-item"><div class="tl-year">1902</div><div class="tl-text">Рождение Марии Яковлевны Хващевской (бабушка по отцовской линии), д. Дубешня</div></div>
+    <div class="tl-item"><div class="tl-year">1914–1918</div><div class="tl-text">Первая мировая война. Макар Макарович награждён Георгиевскими крестами</div></div>
+    <div class="tl-item"><div class="tl-year">1917–1922</div><div class="tl-text">Революция и Гражданская война. Гибель Макара Макаровича на стороне большевиков</div></div>
+    <div class="tl-item"><div class="tl-year">1918</div><div class="tl-text">Смерть Макара Григорьевича Макарова. Рождение Веры Григорьевны Барковской</div></div>
+    <div class="tl-item"><div class="tl-year">1920</div><div class="tl-text">Смерть Елисаветы Фёдоровны Чёрных/Козловой. Рождение Василия Григорьевича Барковского</div></div>
+    <div class="tl-item"><div class="tl-year">1927</div><div class="tl-text">Рождение Александра Павловича Макарова (отец Светланы), д. Боровые</div></div>
+    <div class="tl-item"><div class="tl-year">1928</div><div class="tl-text">Рождение Нины Григорьевны Барковской (мать Светланы), д. Межево</div></div>
+    <div class="tl-item"><div class="tl-year">1929</div><div class="tl-text">Рождение Василия Павловича Макарова (брата отца)</div></div>
+    <div class="tl-item"><div class="tl-year">1932</div><div class="tl-text">Рождение Ильи Павловича Макарова и Михаила Григорьевича Барковского</div></div>
+    <div class="tl-item"><div class="tl-year">1932–1933</div><div class="tl-text">Иван Макарович с семьёй переезжает в д. Девлатово (Украина). Следом — сёстры Евгения и Мария</div></div>
+    <div class="tl-item"><div class="tl-year">1941</div><div class="tl-text">Гибель Василия Павловича Макарова (~13 лет) во время нем. оккупации Беларуси</div></div>
+    <div class="tl-item"><div class="tl-year">1942</div><div class="tl-text">Гибель Ивана и Василия Макаровичей под Сталинградом</div></div>
+    <div class="tl-item"><div class="tl-year">1943</div><div class="tl-text">Гибель Григория Александровича Барковского на фронте (12 мая)</div></div>
+    <div class="tl-item"><div class="tl-year">1949</div><div class="tl-text">Отец оканчивает БГУ. Родители встречаются в школе д. Смородинка — две ветви соединяются</div></div>
+    <div class="tl-item"><div class="tl-year">1951</div><div class="tl-text">Рождение Светланы Александровны Красовской (урождённой Макаровой), 22 декабря</div></div>
+    <div class="tl-item"><div class="tl-year">1955</div><div class="tl-text">Рождение Николая Александровича Макарова (5 января)</div></div>
+    <div class="tl-item"><div class="tl-year">1961</div><div class="tl-text">Смерть Павла Макаровича Макарова (17 ноября)</div></div>
+    <div class="tl-item"><div class="tl-year">1964</div><div class="tl-text">Рождение Сергея Александровича Макарова (24 июня)</div></div>
+    <div class="tl-item"><div class="tl-year">1966</div><div class="tl-text">Рождение Александра Александровича Макарова (8 мая)</div></div>
+    <div class="tl-item"><div class="tl-year">1972</div><div class="tl-text">Смерть Марии Яковлевны Макаровой (Хващевской) (12 марта)</div></div>
+    <div class="tl-item"><div class="tl-year">1976</div><div class="tl-text">Рождение Вячеслава Красовского в Дрездене (21 января). Гибель его отца Валерия Красовского (7 июля, ГДР)</div></div>
+    <div class="tl-item"><div class="tl-year">1977</div><div class="tl-text">Смерть Веры Григорьевны Барковской</div></div>
+    <div class="tl-item"><div class="tl-year">1986</div><div class="tl-text">Рождение Михаила Михайловича Сильвановича (сын Светланы), Минск</div></div>
+    <div class="tl-item"><div class="tl-year">1992</div><div class="tl-text">Рождение Даровских (Макаровой) Анастасии Николаевны (26 ноября)</div></div>
+    <div class="tl-item"><div class="tl-year">1997</div><div class="tl-text">Смерть Нины Григорьевны Макаровой (матери), 3 апреля</div></div>
+    <div class="tl-item"><div class="tl-year">1999</div><div class="tl-text">Рождение Александра Красовского (1 июня, Сиэтл). Смерть В.Г. Барковского (1 июня)</div></div>
+    <div class="tl-item"><div class="tl-year">2005</div><div class="tl-text">Рождение Виктора Красовского (28 марта, Сиэтл)</div></div>
+    <div class="tl-item"><div class="tl-year">2006</div><div class="tl-text">Смерть Александра Павловича Макарова (10 мая)</div></div>
+    <div class="tl-item"><div class="tl-year">2025</div><div class="tl-text">Рождение Даровских Николь Александровны (11 января) — правнучка Светланы 🎀</div></div>
+    <div class="tl-item"><div class="tl-year">2026</div><div class="tl-text">Александр Красовский работает в Anthropic. Виктор — студент Вашингтонского университета. Летопись составлена в Беркли, Калифорния.</div></div>
+  </div>
+</div>
+
+<!-- ══════════════════ АРХИВЫ ══════════════════ -->
+<div id="tab-archives" class="panel">
+  <div class="info-box">Рекомендации для дальнейших архивных поисков и исследований генеалогии.</div>
+  <div class="archive-grid">
+    <div class="archive-card">
+      <h4>Польские архивы · AGAD, Варшава</h4>
+      <p>Документы о польских помещиках эпохи Екатерины II. Искать: граф Лубинский, деревня Межево, Александр Бодовский (Bodowski).</p>
+    </div>
+    <div class="archive-card">
+      <h4>Польская карта · Karta Polaka</h4>
+      <p>Возможна для потомков при наличии документальных подтверждений польского происхождения (ветвь Бодовских-Барковских).</p>
+    </div>
+    <div class="archive-card">
+      <h4>Нац. исторический архив Беларуси · Минск</h4>
+      <p>Метрические книги XIX–XX вв., ревизские сказки. Деревни: Боровые, Дубешня, Ротань (Крупский район); Межево (Оршанский район).</p>
+    </div>
+    <div class="archive-card">
+      <h4>Крупский районный архив</h4>
+      <p>Записи о деревнях Боровые, Ротань, Дубешня, Смородинка, Игрушка. Метрическая запись о браке Макара Григорьевича и Елисаветы Фёдоровны.</p>
+    </div>
+    <div class="archive-card">
+      <h4>РГВА · Москва</h4>
+      <p>Документы о красноармейцах. Искать: Макар Макарович Макаров — кавалер Георгиевских крестов, участник Гражданской войны.</p>
+    </div>
+    <div class="archive-card">
+      <h4>«Память народа» · pamyat-naroda.ru</h4>
+      <p>Искать: Иван и Василий Макаровы (†1942, Сталинград); Григорий Александрович Барковский (†12.05.1943); Павел Макарович Макаров (ВОВ, Берлин).</p>
+    </div>
+    <div class="archive-card">
+      <h4>Тульские архивы</h4>
+      <p>Метрические книги до ~1863 г. Поиск корней Макаровых до переселения в Беларусь. Имя отца Макара неизвестно — возможно, установить по документам.</p>
+    </div>
+    <div class="archive-card">
+      <h4>Оршанский архив · Витебская область</h4>
+      <p>Документы об усадьбе Межево, землевладельцах, жителях деревни в XIX–XX вв. Барковские-Бодовские.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer class="site-footer">
+  Составлено с помощью <span>Claude (Anthropic)</span> · Апрель 2026 · Беркли, Калифорния · Версия 2.1<br>
+  Со слов <span>Красовской (урождённой Макаровой) Светланы Александровны</span><br>
+  При участии брата <span>Александра Александровича Макарова</span> и племянницы <span>Ирины Сергеевны Макаровой</span>
+</footer>
+
+<script>
+function showTab(name) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  event.target.classList.add('active');
+  window.scrollTo({ top: document.querySelector('.tab-nav').offsetTop - 10, behavior: 'smooth' });
+}
+</script>
 </body>
 </html>
